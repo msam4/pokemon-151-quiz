@@ -114,3 +114,6 @@ function shuffleArray(array) {
 
 
 // 15.5) Function to update result text and class name
+function displayResult(result) {
+  resultElement.textContent = result;
+}
