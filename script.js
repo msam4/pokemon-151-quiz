@@ -4,7 +4,7 @@ const pokemonImageElement = document.getElementById("pokemonImage");
 const optionsContainer = document.getElementById("options");
 const pointsElement = document.getElementById("pointsValue");
 const totalCount = document.getElementById("totalCount");
-const mainContainer = document.querySelector(".container");
+const mainContainer = document.getElementsByClassName("container");
 const loadingContainer = document.getElementById("loadingContainer");
 
 // 8) Initialize variables
@@ -68,8 +68,8 @@ async function loadQuestionWithOptions() {
     options.push(randomOption);
 
     // 10.3) Test
-    console.log(options);
-    console.log(optionsIds);
+    // console.log(options);
+    // console.log(optionsIds);
 
     // 16.5) Turn off loading if all options have been fetched
     if (options.length === 4) {
@@ -157,4 +157,23 @@ function displayResult(result) {
 // 17) Hide loading
 function hideLoadingWindow() {
   loadingContainer.classList.add("hide");
+}
+
+// 18) Show loading window
+function showLoadingWindow() {
+  mainContainer[0].classList.remove("show");
+  loadingContainer.classList.remove("hide");
+  loadingContainer.classList.add("show");
+}
+
+// 19) Show puzzle window
+function showPuzzleWindow() {
+  loadingContainer.classList.remove("show");
+  mainContainer[0].classList.remove("hide");
+  mainContainer[0].classList.add("show");
+}
+
+// 20) Hide puzzle window
+function hidePuzzleWindow() {
+  mainContainer[0].classList.add("hide");
 }
