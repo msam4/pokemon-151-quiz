@@ -10,6 +10,7 @@ const loadingContainer = document.getElementById("loadingContainer");
 // 8) Initialize variables
 let usedPokemonId = [];
 let count = 0; // 15.3
+let points = 0;
 
 // 2) Create function to fetch one Pokemon with an ID
 async function fetchPokemonById(id) {
@@ -95,6 +96,20 @@ function checkAnswer(isCorrect, event) {
   event.target.classList.add("selected");
   count++;
   totalCount.textContent = count;
+
+  if (isCorrect) {
+    // 15.7) Call displayResult function
+    displayResult("Correct answer!");
+    // 15.8) If correct, increase the points
+    points ++;
+    pointsElement.textContent = points;
+    event.target.classList.add("correct");
+  } else {
+     displayResult("Wrong answer..."); // Add correct answer?
+     event.target.classList.add("wrong");
+  }
+
+  // 15.9) Load the next question with a 1s delay
 }
 
 // 11) Inital load
