@@ -11,6 +11,7 @@ const loadingContainer = document.getElementById("loadingContainer");
 let usedPokemonId = [];
 let count = 0; // 15.3
 let points = 0;
+let showLoading = false;
 
 // 2) Create function to fetch one Pokemon with an ID
 async function fetchPokemonById(id) {
@@ -109,7 +110,11 @@ function checkAnswer(isCorrect, event) {
      event.target.classList.add("wrong");
   }
 
-  // 15.9) Load the next question with a 1s delay
+  // 15.9) Load the next question with a 1s delay for the user to read the result
+  setTimeout (() => {
+    showLoading = true;
+    loadQuestionWithOptions();
+  }, 1000);
 }
 
 // 11) Inital load
