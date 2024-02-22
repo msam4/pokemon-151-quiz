@@ -15,6 +15,7 @@ let showLoading = false;
 
 // 2) Create function to fetch one Pokemon with an ID
 async function fetchPokemonById(id) {
+  showLoading = true;
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   const data = await response.json();
   return data;
@@ -31,6 +32,11 @@ async function fetchPokemonById(id) {
 
 // 6) Function to load question with options
 async function loadQuestionWithOptions() {
+  // 16.4) Show loading
+  if (showLoading) {
+    showLoadingWindow();
+    hidePuzzleWindow();
+  }
   // 7) Fetch the correct answer first
   let pokemonId = getRandomPokemonId();
 
@@ -64,6 +70,11 @@ async function loadQuestionWithOptions() {
     // 10.3) Test
     console.log(options);
     console.log(optionsIds);
+
+    // 16.5) Turn off loading if all options have been fetched
+    if (options.length === 4) {
+      showLoading = false;
+    }
   }
 
   // 12) Shuffle the options around
