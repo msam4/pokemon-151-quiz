@@ -3,12 +3,13 @@ const resultElement = document.getElementById("result");
 const pokemonImageElement = document.getElementById("pokemonImage");
 const optionsContainer = document.getElementById("options");
 const pointsElement = document.getElementById("pointsValue");
-const totalCount = document.getElementById("totatlCount");
+const totalCount = document.getElementById("totalCount");
 const mainContainer = document.querySelector(".container");
 const loadingContainer = document.getElementById("loadingContainer");
 
 // 8) Initialize variables
 let usedPokemonId = [];
+let count = 0; // 15.3
 
 // 2) Create function to fetch one Pokemon with an ID
 async function fetchPokemonById(id) {
@@ -75,9 +76,25 @@ async function loadQuestionWithOptions() {
   options.forEach((option) => {
     const button = document.createElement("button");
     button.textContent = option;
-    button.onclick = (event) => checkAnswer();
+    button.onclick = (event) => checkAnswer(option === pokemon.name, event);
     optionsContainer.appendChild(button);
   });
+}
+
+// 15) Create check answer function
+function checkAnswer(isCorrect, event) {
+  // 15.1) Checks if any button is already selected, if falsy no element => null
+  const selectedButton = document.querySelector(".selected");
+
+  // 15.2) If a button is already selected, do nothing, exit function
+  if (selectedButton) {
+    return;
+  }
+
+  // 15.4) Else mark the clicked button as slected and increase the count by 1.
+  event.target.classList.add("selected");
+  count++;
+  totalCount.textContent = count;
 }
 
 // 11) Inital load
@@ -94,3 +111,6 @@ function getRandomPokemonId() {
 function shuffleArray(array) {
   return array.sort(() => Math.random() - 0.5);
 };
+
+
+// 15.5) Function to update result text and class name
