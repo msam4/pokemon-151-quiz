@@ -92,6 +92,11 @@ async function loadQuestionWithOptions() {
     button.onclick = (event) => checkAnswer(option === pokemon.name, event);
     optionsContainer.appendChild(button);
   });
+
+  if (!showLoading) {
+    hideLoadingWindow();
+    showPuzzleWindow();
+  }
 }
 
 // 15) Create check answer function
@@ -147,4 +152,9 @@ function shuffleArray(array) {
 // 15.5) Function to update result text and class name
 function displayResult(result) {
   resultElement.textContent = result;
+}
+
+// 17) Hide loading
+function hideLoadingWindow() {
+  loadingContainer.classList.add("hide");
 }
