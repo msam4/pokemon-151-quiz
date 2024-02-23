@@ -16,12 +16,13 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: "Poppins", sans-serif;
-  /* background: linear-gradient(135deg, #3b4cca 0%, #ff3535 100%); */
-  background: linear-gradient(
+  background: linear-gradient(135deg, #3b4cca 0%, #ff3535 100%);
+  /* new background style */
+  /* background: linear-gradient(
     #da2e2c 49%,
     #090029 49%,
     #090029 51%,
-    #ffffff 51%);
+    #ffffff 51%); */
   color: var(--white-color);
 }
 
@@ -30,6 +31,11 @@ body {
   max-width: 300px;
   flex-direction: column;
   gap: 50px;
+  /* new container style */
+  /* padding: 3em 1.5em;
+  border: 0.6em solid #090029;
+  border-radius: 0.5em;
+  background-color: var(--white-color); */
 }
 
 .header {
@@ -58,15 +64,24 @@ button {
   font-weight: 700;
   font-size: 17px;
   text-transform: capitalize;
-  cursor: pointer;
   background-color: var(--white-color);
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+  /* new button style */
+  /* padding: 0.8em;
+  border: 0.3em solid #090029;
+  border-radius: 0.5em;
+  box-shadow: 0 0.5em 0 0 #090029;
+  cursor: pointer; */
 }
 
 button:hover {
   background-color: var(--button-hover);
   color: var(--white-color);
+  /* new hover style */
+  /* box-shadow: none;
+  transform: translateY(0.6em); */
 }
 
 button.correct {
