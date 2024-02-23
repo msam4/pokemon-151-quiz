@@ -99,6 +99,9 @@ async function loadQuestionWithOptions() {
   }
 }
 
+// 11) Inital load
+loadQuestionWithOptions();
+
 // 15) Create check answer function
 function checkAnswer(isCorrect, event) {
   // 15.1) Checks if any button is already selected, if falsy no element => null
@@ -133,8 +136,6 @@ function checkAnswer(isCorrect, event) {
   }, 1000);
 }
 
-// 11) Inital load
-loadQuestionWithOptions();
 
 // --- UTILITY FUNCTIONS ---
 
