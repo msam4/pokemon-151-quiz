@@ -6,7 +6,7 @@ A multiple choice quiz on the classic "Who's That Pokemon?" quiz that airs in be
 <img src="https://github.com/msam4/pokemon-151-quiz/assets/137851066/4cc1061c-ca51-4c5a-b959-eb71abcff126" alt="Question 10" width="500">
 <br>
 <br>
-<img src="https://github.com/msam4/pokemon-151-quiz/assets/137851066/4c91f4a5-ba9e-48a2-bc02-5ccccc8e9d75" alt="Squirtle" width="500">
+<img src="https://github.com/msam4/pokemon-151-quiz/assets/137851066/4c91f4a5-ba9e-48a2-bc02-5ccccc8e9d75" alt="Question 15" width="500">
 <br>
 <br>
 
